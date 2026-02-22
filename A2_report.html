@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Eri-ife Olayinka</strong> - <em>eriolay@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Historical Harms, Contemporary Effects</h2>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<!-- <li><b>How long after the Federal Fair Housing Act was passed in 1964 did it take to see more African Americans owning houses?</b> This question came to me from exploring the timeline at bostonfairhousing.org. I think it's always interesting to explore the effectiveness of policies over time, especially ones that appear to aim to bridge racial gaps.</li>
+				<li><b>How did the population of people of colour change in Boston's predominantly white neighbourhoods (South Boston, Charlestown, and East Boston) after the Boston Housing Authority lawsuit in 1988?</b> This question also came to me from exploring the bostonfairhousing.org website. In my time in Boston, I've heard from various friends and family that live in the area that particulary South Boston (the "South End") is still predominantly white; some have even referred to it as a "racist" area. I'm very curious to see what the data might reveal at least about how the demographic composition changed (or stayed similar).</li>
+				<li><b>How has the racial composition of areas of Greater Boston with major/large universities changed over time?</b> This question came to mind because over the past few years of becoming more aware of the racial segregation in the Boston Area, I've been curious about how much educational institutions have contributed to potential changes in the area's demographics. Universities tend to attract people from far and wide, and the Greater Boston area has such a large amount of universities so I'm curious to see what effect that has had.</li> -->
+				<li><b>What cities in the Greater Boston area had the largest percentage of areas graded "C - Definitly declining" and "D - Hazardous"?</b> I want to explore this question because I expect that larger cities will have higher percentages of areas graded as "C" or "D" because larger cities were more attractive for people - including African Americans and other minorities - to migrate to due to the higher concentration of opportunities for better jobs, schools, and other resources. Increased presence of African Americans and other minorities was a main factor that the Home Owners' Loan Corporation used to decide that an area was either declining ("C" grade) or already hazardous and not worth investment ("D" grade), so I expect to see this attitude reflected in the relationship between city size and percentage of areas rated as "C" or "D".</li>
+				<li><b>How diverse were the gradings for the different areas of large cities (>=10 area IDs) in the Greater Boston area?</b> I'm curious about this after reading the section on redlining from bostonfairhousing.org because it discusses how whole neighbourhoods would be marked as areas where financial institutions should not invest, so I wonder how common it was for a city to have great variation in grading or if gradings tended to be the same for a whole city.</li>
+				<li><b>What does the distribution of gradings within cities look like geographically?</b> With this question, I want to explore how much neighbouring areas shared the same grading. I intuitively expect that neighbouring areas will largely share the same gradings as redlining aimed to underdevelop entire neighbourhoods that weren't "white and rich enough", but I'm curious about the extent to which areas with the same gradings existed as dense pockets in the city vs more distributed spatters across the city.</li>
+			</ol>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<img src="figures/fig1.png" alt="Table of Redlining Grades by City for the Greater Boston Area" />
+				<figcaption>
+				Our first step in exploring this dataset is to get a general overview of the data. The above figure shows what grades are present in the 26 Greater Boston cities present in the redlining data gathered by Mapping Inequality. For this visualisation and all the following, unless otherwise stated, the areas that are not categorised as residential (i.e. commercial, industrial, etc.) are not included in the visualisation as their categories on the redlining map are null so they do not contribute to the trends/insights I'm aiming to observe.
+				 The grading scale is as follows: "A - Best", "B - Still Desirable", "C - Definitely Declining", and "D - Hazardous". The above figure shows that most of the cities had at least one area with a "B" or "C" grade, but we see this consistency drop when we look at the two extremes: only x out of 26 cities had areas with a grade of "A", and only x out of 26 had areas with a grade of "D". 
+				 This is interesting because it shows that most cities has a mix of "good" and "bad" areas, but it was less common for cities to have only "good" or only "bad" areas. This could be because of the way redlining was implemented, where financial institutions would be encouraged to invest in certain areas and not others, so it would be more common for a city to have a mix of areas that were graded differently (due to varying demographics within the city)than for a city to have all areas graded the same/similarly. 
+				 The colours of the circles here correspond with approximately the colours used in the original redlining maps, so we can also see how the colour scheme was used to visually reinforce the idea of "good" vs "bad" areas, with "A - Best" areas being green and "D - Hazardous" areas being red.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="figures/fig2.png" alt="Bar Chart of Redlining Grades Within Cities for the Greater Boston Area" />
+				<figcaption>
+				Next, I would like to explore the distribution of grades within each city. The above figure shows how many areas there are in each city, as well as how many were assigned each grade. With this visualisation I wanted to achieve two things: show the distribution of grades within each city, and also show how many areas there are in each city to give a sense of the size of the city. From the figure we can see that Boston dominates the data with 39 areas, with Salem being the closest in size with 21 areas.
+				We can also see that the distribution of grades varies across cities, with some cities having a more varied distribution of grades across their areas (e.g. Boston, Lynn) and other cities having a more skewed distribution (e.g. Chelsea, Somerville). 
+				This visualisation can give an idea of what cities were likely to have been most affected by redlining practices, as cities with more "C" and "D" graded areas. This can in turn provide insight into which cities may have had more non-white residents at the time, as redlining practices were often targeted towards non-white communities in order to reserve improvement and development for the neighbourhoods that were deemed more "trustworthy" (read "more white").
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="figures/fig3.png" alt="Table showing percentage of areas graded 'C' and 'D' for each city in the Greater Boston area" />
+				<figcaption>
+				Now, I will begin exploring my questions. The first question I wanted to explore was which cities had the largest percentage of areas graded "C - Definitely Declining" and "D - Hazardous", and how this relates to the size of the city. The above figure shows the percentage of areas in each city that were graded "C" or "D".
+				 From this figure we can see that Revere, Everett, and Chelsea all had 100% of their residential areas graded as "C" or "D", despite being the smallest cities in the dataset with 5, 4, and 5 residential areas respectively. This is interesting because the data largely doesn't reflect any correlation between city size and percentage of areas regarded as declining or hazardous, which is contrary to my initial intuition that larger cities would have higher percentages of "C" and "D" grades.
+				  This hypothesis came from a migration-focused lens, but a possible explanation for the top 3 cities being so small could be that because of their size, they were more likely to be overlooked and neglected by financial institutions, which could have led to them being more likely to be graded as they were.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="figures/fig4.jpg" alt="Figure of pie charts where each slice represents a grading category for a city" />
+				<figcaption>
+				My next question focused on the diversity of gradings within cities. Although this can already be observed in Figure 2, I wanted to explore this question from a visual perspective that presents the different areas within a city and their gradings as parts of a whole. Since there are 4 grading categories, I would say that for a city to be diverse it needs to include 3 or more gradings. 22 out of 26 cities had at least 3 gradings, and 8 out of those 22 had all 4 gradings. This shows that it was quite common for a city to have the full range of investment potential, reflecting redlining was a more concentrated effort that targeted specific areas within neighbourhoods rather than entire cities. Something of note from this visualisation is that every city has at least one area with a grading of "C - Definitely Declining", with many cities having sizable percentages labelled as declining. 
+				I find this particularly interesting because racially restrictive covenants that barred non-white (especially African American) people from purchasing, leasing, or inhabiting property in certain areas were very common and even legal until 1948. Because of this, I expected there to be less diversity in the gradings within cities as the covenants would have created and enforced more homogeneous, white demographics within cities. This expectation being contradicted makes me question a) how effective the covenants were at maintaining white-only neighbourhoods and b) if they <em>were</em> effective at keeping African Americans out, what other factors could have contributed to all cities having at least one area in "decline".
+			</figcaption>
+			</figure>
+
+			<figure>
+				<img src="figures/fig5.png" alt="Map showing the geographic distribution of grading categories within each city in the Greater Boston area" />
+				<figcaption>
+				Finally, we will address the question of how the gradings were distributed geographically within cities. Since this is a geographical question, I chose to also include colour indications for non-residential areas in order to give a better sense of the layout of the cities as a whole since a neighbourhood's proximity to commercial or industrial areas could have a signifcant effect on what demographics are drawn to the area. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="IMAGE_FILENAME" alt="" />
+				<figcaption>
+				**zoom the map in on boston and cambridge** i've heard about the development of central pushing out black people
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="IMAGE_FILENAME" alt="" />
+				<figcaption>
+				ENTER IMAGE CAPTION HERE.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="IMAGE_FILENAME" alt="" />
+				<figcaption>
+				ENTER IMAGE CAPTION HERE.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="IMAGE_FILENAME" alt="" />
+				<figcaption>
+				ENTER IMAGE CAPTION HERE.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="IMAGE_FILENAME" alt="" />
+				<figcaption>
+				ENTER IMAGE CAPTION HERE.
+				</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>WRITE FINAL SUMMARY HERE.</p>
+		</section>
+	</main>
+</body>
+</html>
